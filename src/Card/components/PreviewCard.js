@@ -3,12 +3,7 @@ import React from 'react';
 import './PreviewCard.css';
 
 export default function PreviewCard({ palette, userInfo, setUserInfo }) {
-	const handleReset = () => {
-		Object.keys(userInfo).forEach((el) => {
-			setUserInfo((userInfo[el] = ''));
-		});
-		// console.log(userInfo);
-	};
+	const handleReset = () => {};
 	return (
 		<section>
 			<div
@@ -21,9 +16,9 @@ export default function PreviewCard({ palette, userInfo, setUserInfo }) {
 						reset
 					</button>
 					<div className="preview__card--text">
-						<h2 className="preview--h2">
+						{/* <h2 className="preview--h2">
 							{userInfo.nombre === '' ? 'Nombre Apellidoss' : userInfo.nombre}
-						</h2>
+						</h2> */}
 					</div>
 				</div>
 			</div>

@@ -1,12 +1,13 @@
 import React from 'react';
 
-export default function Fill({ userInfo, setUserInfo }) {
+export default function Fill({ user, setUser, userInfo }) {
 	const handleChange = (e) => {
-		setUserInfo({
-			...userInfo,
+		setUser({
+			...user,
 			[e.target.name]: e.target.value,
 		});
 	};
+
 	return (
 		<>
 			<div>
@@ -17,9 +18,9 @@ export default function Fill({ userInfo, setUserInfo }) {
 					className="form_field"
 					type="text"
 					name="nombre"
-					value={userInfo.nombre}
 					placeholder="Ej: Sally Jill"
 					onChange={handleChange}
+					value={userInfo.nombre}
 				/>
 			</div>
 			<div>
@@ -30,9 +31,9 @@ export default function Fill({ userInfo, setUserInfo }) {
 					className="form_field"
 					type="text"
 					name="puesto"
-					value={userInfo.puesto}
 					placeholder="Ej: disenadio"
 					onChange={handleChange}
+					value={userInfo.puesto}
 				/>
 			</div>
 		</>

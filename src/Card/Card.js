@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Fill from './components/Fill';
 import PreviewCard from './components/PreviewCard';
-const initialUserInfo = {
-	nombre: '',
-	puesto: '',
-	email: '',
-	telefono: '',
-};
-export default function Card() {
-	const [userInfo, setUserInfo] = useState(initialUserInfo);
 
+export default function Card({ userInfo, user, setUser }) {
 	return (
 		<>
 			<header>
@@ -18,14 +11,14 @@ export default function Card() {
 			</header>
 			<main className="container">
 				<form>
-					{/* setPalette={setPalette}  */}
 					<fieldset>
-						<Fill userInfo={userInfo} setUserInfo={setUserInfo}></Fill>
+						<Fill userInfo={userInfo} user={user} setUser={setUser}></Fill>
 					</fieldset>
 				</form>
 				<PreviewCard
 					userInfo={userInfo}
-					setUserInfo={setUserInfo}
+					user={user}
+					setUser={setUser}
 				></PreviewCard>
 			</main>
 		</>
