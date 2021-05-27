@@ -1,8 +1,15 @@
 .preview__card .preview-default {
 	background-color: blue;
 	padding: 50px;
+	border: 1px solid;
 }
 .preview__card .preview-1 {
 	background-color: red;
 	padding: 50px;
+	border: 1px solid;
+}
+.preview__card--image {
+	height: 300px;
+	width: 300px;
+	border: 1px solid;
 }

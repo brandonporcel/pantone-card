@@ -2,8 +2,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Fill from './components/Fill';
 import PreviewCard from './components/PreviewCard';
+const initialUserInfo = {
+	nombre: 'Nombre fulano',
+	puesto: 'Front-end capoo',
+	email: '',
+	foto: 'https://brandonporcel.github.io/lianne-react/static/media/LiannePurpleLogo.41b0a55d.png',
+	telefono: '',
+};
+const userInfo = {
+	nombre: '',
+	puesto: '',
+	email: '',
+	foto: '',
+	telefono: '',
+};
+export default function Card() {
+	const [user, setUser] = useState(userInfo);
 
-export default function Card({ userInfo, user, setUser }) {
 	return (
 		<>
 			<header>
@@ -12,11 +27,11 @@ export default function Card({ userInfo, user, setUser }) {
 			<main className="container">
 				<form>
 					<fieldset>
-						<Fill userInfo={userInfo} user={user} setUser={setUser}></Fill>
+						<Fill user={user} setUser={setUser}></Fill>
 					</fieldset>
 				</form>
 				<PreviewCard
-					userInfo={userInfo}
+					initialUserInfo={initialUserInfo}
 					user={user}
 					setUser={setUser}
 				></PreviewCard>

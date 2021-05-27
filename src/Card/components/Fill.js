@@ -1,11 +1,22 @@
 import React from 'react';
 
-export default function Fill({ user, setUser, userInfo }) {
+export default function Fill({ user, setUser }) {
 	const handleChange = (e) => {
 		setUser({
 			...user,
 			[e.target.name]: e.target.value,
 		});
+	};
+	const uploadImage = (e) => {
+		const avatarUrl = URL.createObjectURL(e.target.files[0]);
+		setUser({
+			...user,
+			foto: avatarUrl,
+		});
+	};
+	const getPreview = (image) => {
+		console.log('HOLA');
+		// 	return 'backgroundImage: `url(${image})`';
 	};
 
 	return (
@@ -20,7 +31,7 @@ export default function Fill({ user, setUser, userInfo }) {
 					name="nombre"
 					placeholder="Ej: Sally Jill"
 					onChange={handleChange}
-					value={userInfo.nombre}
+					value={user.nombre}
 				/>
 			</div>
 			<div>
@@ -33,8 +44,17 @@ export default function Fill({ user, setUser, userInfo }) {
 					name="puesto"
 					placeholder="Ej: disenadio"
 					onChange={handleChange}
-					value={userInfo.puesto}
+					value={user.puesto}
 				/>
+			</div>
+			<div className="form__container-photo">
+				<label className="form_title-photo" htmlFor="photo">
+					Imagen de perfil *
+				</label>
+				<input type="file" onChange={uploadImage} name="foto" />
+				<div className="form__container-btn">
+					<div className="form__photo-preview" style={getPreview(user.foto)} />
+				</div>
 			</div>
 		</>
 	);

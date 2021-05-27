@@ -2,8 +2,15 @@ import React from 'react';
 
 import './PreviewCard.css';
 
-export default function PreviewCard({ palette, userInfo, setUserInfo }) {
-	const handleReset = () => {};
+export default function PreviewCard({
+	palette,
+	user,
+	setUser,
+	initialUserInfo,
+}) {
+	const handleReset = () => {
+		setUser(initialUserInfo);
+	};
 	return (
 		<section>
 			<div
@@ -16,10 +23,22 @@ export default function PreviewCard({ palette, userInfo, setUserInfo }) {
 						reset
 					</button>
 					<div className="preview__card--text">
-						{/* <h2 className="preview--h2">
-							{userInfo.nombre === '' ? 'Nombre Apellidoss' : userInfo.nombre}
-						</h2> */}
+						<h2 className="preview--h2">
+							{user.nombre === '' ? initialUserInfo.nombre : user.nombre}
+						</h2>
+						<h3 className="preview--h3">
+							{user.puesto === '' ? initialUserInfo.puesto : user.puesto}
+						</h3>
 					</div>
+					<div
+						className="preview__card--image"
+						// style={{  backgroundImage: `url(${user.foto})` }}
+						style={{
+							backgroundImage: `url(${
+								user.foto === '' ? initialUserInfo.foto : user.foto
+							})`,
+						}}
+					/>
 				</div>
 			</div>
 		</section>
