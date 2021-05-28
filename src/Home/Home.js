@@ -8,7 +8,7 @@ function Home() {
 		<>
 			<div className="home-container">
 				<header className="header">
-					<h1 className="header-logo">Pantone Card - Album Edition</h1>
+					<h1 className="header-logo">Pantone Card</h1>
 				</header>
 				<main className="main-container">
 					<div className="main-title">
@@ -17,9 +17,18 @@ function Home() {
 							Crea mejores contactos profesionales de forma fácil y cómoda
 						</p>
 					</div>
-					<IconsHome design="Diseña" fill="Rellena" share="Comparte" />
+					<IconsHome design="Diseña" fill="Rellena" share="Descarga" />
 					<ButtonHome text="Comenzar"></ButtonHome>
 				</main>
+				<footer>
+					<a
+						href="https://github.com/brandonporcel"
+						target="_blank"
+						rel="noreferrer"
+					>
+						brandon porcel
+					</a>
+				</footer>
 			</div>
 		</>
 	);
