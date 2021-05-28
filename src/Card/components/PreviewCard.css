@@ -14,31 +14,31 @@ form {
 }
 fieldset {
 	font-family: Open Sans, sans-serif;
-	border: none;
 	border-bottom: 1px solid #d3d3d3;
 }
-.custom-container-title {
+.fill__container-title {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 10px 0 10px 0;
 	cursor: pointer;
 	height: auto;
+	border: 1px solid;
 }
 
-.custom-logo-ctn {
+.fill-logo-ctn {
 	width: 28px;
 	height: 28px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.custom-logo-ctn svg {
+.fill-logo-ctn svg {
 	color: orange;
 	height: 100%;
 	width: 100%;
 }
-.custom-title {
+.fill__title {
 	width: 100%;
 	padding-left: 10px;
 	margin: 0;
@@ -48,7 +48,7 @@ fieldset {
 	text-transform: uppercase;
 	font-size: 18px;
 }
-.custom-arrow-ctn {
+.fill-arrow-ctn {
 	width: 28px;
 	height: 28px;
 	display: flex;
@@ -65,7 +65,7 @@ fieldset {
 	}
 }
 
-.custom-arrow-ctn svg {
+.fill-arrow-ctn svg {
 	animation-name: spin-up;
 	animation-duration: 1s;
 	color: green;
@@ -97,7 +97,7 @@ fieldset {
 .preview__card--image {
 	height: 300px;
 	width: 300px;
-	border: 1px solid blue;
+	border: 1px solid;
 }
 .hide {
 	display: none;

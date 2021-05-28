@@ -3,16 +3,18 @@ import './components/PreviewCard.css';
 import { Link } from 'react-router-dom';
 import Fill from './components/Fill';
 import Design from './components/Design';
+
 import PreviewCard from './components/PreviewCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faObjectUngroup,
 	faKeyboard,
 } from '@fortawesome/free-regular-svg-icons';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import DesignCtn from './components/DesignCtn';
-
+import {
+	faDownload,
+	faChevronUp,
+	faChevronDown,
+} from '@fortawesome/free-solid-svg-icons';
 const initialUserInfo = {
 	nombre: 'Nombre fulano',
 	puesto: 'Front-end capoo',
@@ -29,6 +31,20 @@ const userInfo = {
 };
 export default function Card() {
 	const [user, setUser] = useState(userInfo);
+	const handleCollapsable = (e) => {
+		const visibleSection = e.currentTarget.getAttribute('data-section');
+		if (visibleSection === user.visibleSection) {
+			setUser({
+				...user,
+				visibleSection: '',
+			});
+		} else {
+			setUser({
+				...user,
+				visibleSection,
+			});
+		}
+	};
 
 	return (
 		<>
@@ -39,45 +55,38 @@ export default function Card() {
 			</header>
 			<main className="main-card">
 				<form>
-					<DesignCtn
-						setUser={setUser}
-						logo={faObjectUngroup}
-						sectionTitle="disenaa"
-						section="design"
-						user={user}
-					></DesignCtn>
-					{/* <DesignCtn
-						handleCollapsable={handleCollapsable}
-						logo={faObjectUngroup}
-						sectionTitle="Diseñaa"
-						section="design"
-						SectionComponent={<Design></Design>}
-						user={user}
-					></DesignCtn> */}
-					{/* <DesignCtn
-						handleCollapsable={handleCollapsable}
-						logo={faKeyboard}
-						sectionTitle="Relena"
-						setion="fill"
-						SectionComponent={<Fill user={user} setUser={setUser}></Fill>}
-						user={user}
-					></DesignCtn> */}
 					<fieldset>
 						<div
-							data-section="fill"
-							className="custom-container-title"
-							// onClick={handleCollapsable}
+							data-section="design"
+							className="fill__container-title"
+							onClick={handleCollapsable}
 						>
-							<div className="custom-logo-ctn">
-								<FontAwesomeIcon icon={faKeyboard} />
+							<div className="fill-logo-ctn">
+								<FontAwesomeIcon icon={faObjectUngroup} />
 							</div>
-							<h2 className="custom-title">Rellena</h2>
-							<div className="custom-arrow-ctn">
-								{user.visibleSection === 'fill' ? (
+							<h2 className="fill__title">Diseña</h2>
+							<div className="fill-arrow-ctn">
+								{user.visibleSection === 'design' ? (
 									<FontAwesomeIcon icon={faChevronDown} />
 								) : (
 									<FontAwesomeIcon icon={faChevronUp} />
 								)}
+							</div>
+						</div>
+						<Design user={user}></Design>
+					</fieldset>
+					<fieldset>
+						<div
+							data-section="fill"
+							className="fill__container-title"
+							onClick={handleCollapsable}
+						>
+							<div className="fill-logo-ctn">
+								<FontAwesomeIcon icon={faKeyboard} />
+							</div>
+							<h2 className="fill__title">Rellena</h2>
+							<div className="fill-arrow-ctn">
+								<FontAwesomeIcon icon={faChevronUp} />
 							</div>
 						</div>
 						<Fill user={user} setUser={setUser}></Fill>
