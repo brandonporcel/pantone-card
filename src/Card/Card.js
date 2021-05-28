@@ -10,6 +10,7 @@ import {
 	faKeyboard,
 } from '@fortawesome/free-regular-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import DesignCtn from './components/DesignCtn';
 
 const initialUserInfo = {
@@ -28,20 +29,6 @@ const userInfo = {
 };
 export default function Card() {
 	const [user, setUser] = useState(userInfo);
-	const handleCollapsable = (e) => {
-		const visibleSection = e.currentTarget.getAttribute('data-section');
-		if (visibleSection === user.visibleSection) {
-			setUser({
-				...user,
-				visibleSection: '',
-			});
-		} else {
-			setUser({
-				...user,
-				visibleSection,
-			});
-		}
-	};
 
 	return (
 		<>
@@ -53,6 +40,7 @@ export default function Card() {
 			<main className="main-card">
 				<form>
 					<DesignCtn
+						setUser={setUser}
 						logo={faObjectUngroup}
 						sectionTitle="disenaa"
 						section="design"
@@ -78,14 +66,18 @@ export default function Card() {
 						<div
 							data-section="fill"
 							className="custom-container-title"
-							onClick={handleCollapsable}
+							// onClick={handleCollapsable}
 						>
 							<div className="custom-logo-ctn">
 								<FontAwesomeIcon icon={faKeyboard} />
 							</div>
 							<h2 className="custom-title">Rellena</h2>
 							<div className="custom-arrow-ctn">
-								{/* <FontAwesomeIcon icon={faChevronUp} /> */}
+								{user.visibleSection === 'fill' ? (
+									<FontAwesomeIcon icon={faChevronDown} />
+								) : (
+									<FontAwesomeIcon icon={faChevronUp} />
+								)}
 							</div>
 						</div>
 						<Fill user={user} setUser={setUser}></Fill>

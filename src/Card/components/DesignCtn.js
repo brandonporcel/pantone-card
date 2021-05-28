@@ -2,12 +2,27 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export default function DesignCtn({
-	handleCollapsable,
+	setUser,
 	logo,
 	sectionTitle,
 	section,
 	user,
 }) {
+	const handleCollapsable = (e) => {
+		const visibleSection = e.currentTarget.getAttribute('data-section');
+		if (visibleSection === user.visibleSection) {
+			setUser({
+				...user,
+				visibleSection: '',
+			});
+		} else {
+			setUser({
+				...user,
+				visibleSection,
+			});
+		}
+	};
+	console.log(section, 'section');
 	return (
 		<fieldset>
 			<div
@@ -19,11 +34,13 @@ export default function DesignCtn({
 					<FontAwesomeIcon icon={logo} />
 				</div>
 				<h2 className="custom-title">{sectionTitle}</h2>
+				{console.log(section, 'lol')}
 				<div className="custom-arrow-ctn">
+					{console.log(section, 'aa')}
 					{user.visibleSection === { section } ? (
 						<FontAwesomeIcon icon={faChevronDown} />
 					) : (
-						<FontAwesomeIcon icon={faChevronUp} />
+						'a'
 					)}
 				</div>
 			</div>
