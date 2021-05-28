@@ -21,39 +21,42 @@ export default function Fill({ user, setUser }) {
 
 	return (
 		<>
-			<div>
-				<label className="form_title" htmlFor="name">
-					Nombre completo *
-				</label>
-				<input
-					className="form_field"
-					type="text"
-					name="nombre"
-					placeholder="Ej: Sally Jill"
-					onChange={handleChange}
-					value={user.nombre}
-				/>
-			</div>
-			<div>
-				<label className="form_title" htmlFor="name">
-					dpmde laburas *
-				</label>
-				<input
-					className="form_field"
-					type="text"
-					name="puesto"
-					placeholder="Ej: disenadio"
-					onChange={handleChange}
-					value={user.puesto}
-				/>
-			</div>
-			<div className="form__container-photo">
-				<label className="form_title-photo" htmlFor="photo">
-					Imagen de perfil *
-				</label>
-				<input type="file" onChange={uploadImage} name="foto" />
-				<div className="form__container-btn">
-					<div className="form__photo-preview" style={getPreview(user.foto)} />
+			<div
+				className={`${user.visibleSection === 'fill' ? 'fill__form' : 'hide'}`}
+			>
+				<div className="form-name-ctn">
+					<label className="form_title" htmlFor="name">
+						Nombre completo *
+					</label>
+					<input
+						className="form_field"
+						type="text"
+						name="nombre"
+						placeholder="Ej: Sally Jill"
+						onChange={handleChange}
+						value={user.nombre}
+					/>
+				</div>
+
+				<div className="form-job-ctn">
+					<label className="form_title" htmlFor="puesto">
+						De que laburas
+					</label>
+					<input
+						className="form_field"
+						type="text"
+						name="puesto"
+						placeholder="Ej: disenadio"
+						onChange={handleChange}
+						value={user.puesto}
+					/>
+				</div>
+				<div className="form-photo-ctn">
+					<label className="form_title" htmlFor="photo">
+						Imagen de perfil *
+					</label>
+					<input type="file" onChange={uploadImage} name="foto" />
+					<div className="form-photo-preview" style={getPreview(user.foto)} />
 				</div>
 			</div>
 		</>
