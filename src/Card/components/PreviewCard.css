@@ -1,3 +1,7 @@
+body {
+	background-color: #222;
+	color: #fff;
+}
 .header-card {
 	margin: 0 20px;
 }
@@ -16,7 +20,7 @@ fieldset {
 	font-family: Open Sans, sans-serif;
 	border-bottom: 1px solid #d3d3d3;
 }
-.fill__container-title {
+.custom-container-title {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -26,19 +30,19 @@ fieldset {
 	border: 1px solid;
 }
 
-.fill-logo-ctn {
+.custom-logo-ctn {
 	width: 28px;
 	height: 28px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.fill-logo-ctn svg {
+.custom-logo-ctn svg {
 	color: orange;
 	height: 100%;
 	width: 100%;
 }
-.fill__title {
+.custom-title {
 	width: 100%;
 	padding-left: 10px;
 	margin: 0;
