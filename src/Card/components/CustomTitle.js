@@ -2,6 +2,7 @@ import React from 'react';
 import Design from './Design';
 import Fill from './Fill';
 import Share from './Share';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faChevronDown,
@@ -55,10 +56,8 @@ export default function CustomTitle({
 				></Design>
 			) : section === 'fill' ? (
 				<Fill user={user} setUser={setUser}></Fill>
-			) : section === 'share' ? (
-				<Share></Share>
 			) : (
-				'ahre'
+				<Share></Share>
 			)}
 		</fieldset>
 	);

@@ -63,6 +63,15 @@ export default function Card() {
 						user={user}
 						setUser={setUser}
 					></CustomTitle>
+
+					<CustomTitle
+						initialUserInfo={initialUserInfo}
+						title="Descarga"
+						handleCollapsable={handleCollapsable}
+						section="download"
+						user={user}
+						setUser={setUser}
+					></CustomTitle>
 				</form>
 				<PreviewCard
 					initialUserInfo={initialUserInfo}
