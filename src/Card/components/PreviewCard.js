@@ -1,35 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './PreviewCard.css';
-
-export default function PreviewCard({
-	palette,
-	user,
-	setUser,
-	initialUserInfo,
-}) {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faRecycle } from '@fortawesome/free-solid-svg-icons';
+export default function PreviewCard({ user, setUser, initialUserInfo }) {
 	const handleReset = () => {
 		setUser(initialUserInfo);
 	};
+	useEffect(() => {
+		const d = document;
+
+		user.instagram === ''
+			? d.querySelector('.preview__card--image').classList.add('big')
+			: d.querySelector('.preview__card--image').classList.remove('big');
+	}, [user.instagram]);
 	return (
 		<section>
 			<div
 				className={`preview__card preview-${
-					palette === 1 ? 'default' : palette === 2 ? 'red' : 'grey'
+					user.palette === '1'
+						? 'default'
+						: user.palette === '2'
+						? 'second'
+						: user.palette === '3'
+						? 'third'
+						: ''
 				}`}
 			>
-				<div className="preview__card--top">
-					<button type="reset" onClick={handleReset}>
-						reset
-					</button>
-					<div className="preview__card--text">
-						<h2 className="preview--h2">
-							{user.nombre === '' ? initialUserInfo.nombre : user.nombre}
-						</h2>
-						<h3 className="preview--h3">
-							{user.puesto === '' ? initialUserInfo.puesto : user.puesto}
-						</h3>
-					</div>
+				<button className="reset-btn" type="reset" onClick={handleReset}>
+					<FontAwesomeIcon
+						className="reset-icon"
+						icon={faRecycle}
+					></FontAwesomeIcon>
+					reset
+				</button>
+				<article className="pantone-container">
 					<div
 						className="preview__card--image"
 						// style={{  backgroundImage: `url(${user.foto})` }}
@@ -39,7 +45,33 @@ export default function PreviewCard({
 							})`,
 						}}
 					/>
-				</div>
+					<div className="preview__card--text">
+						<h2 className="card-title">
+							{user.nombre === '' ? initialUserInfo.nombre : user.nombre}
+						</h2>
+						<h3 className="card-subtitle">
+							{user.puesto === '' ? initialUserInfo.puesto : user.puesto}
+						</h3>
+					</div>
+
+					<nav class={user.instagram === '' ? 'hide' : 'preview__card--social'}>
+						<ul class="preview__card--ul">
+							<li class="social-card-li">
+								<a
+									className="social-card-link"
+									target="_blank"
+									rel="noreferrer"
+									href={`https://instagram.com/${user.instagram}`}
+								>
+									<FontAwesomeIcon
+										className="social-card-icon"
+										icon={faInstagram}
+									></FontAwesomeIcon>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</article>
 			</div>
 		</section>
 	);

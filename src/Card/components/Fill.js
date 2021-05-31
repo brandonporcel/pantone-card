@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Fill({ user, setUser }) {
 	const handleChange = (e) => {
@@ -7,6 +7,7 @@ export default function Fill({ user, setUser }) {
 			[e.target.name]: e.target.value,
 		});
 	};
+	const handleFilePicker = () => {};
 	const uploadImage = (e) => {
 		const avatarUrl = URL.createObjectURL(e.target.files[0]);
 		setUser({
@@ -32,31 +33,57 @@ export default function Fill({ user, setUser }) {
 						className="form_field"
 						type="text"
 						name="nombre"
-						placeholder="Ej: Sally Jill"
+						placeholder="Ej: Diego Maradona"
 						onChange={handleChange}
 						value={user.nombre}
+						// maxLength={30}
 					/>
 				</div>
 
 				<div className="form-job-ctn">
 					<label className="form_title" htmlFor="puesto">
-						De que laburas
+						Qué sos?
 					</label>
 					<input
 						className="form_field"
 						type="text"
 						name="puesto"
-						placeholder="Ej: disenadio"
+						placeholder="Ej: Jugador de Ping Pong"
 						onChange={handleChange}
 						value={user.puesto}
 					/>
 				</div>
 				<div className="form-photo-ctn">
-					<label className="form_title" htmlFor="photo">
+					<label htmlFor="foto" className="form_title">
 						Imagen de perfil *
 					</label>
-					<input type="file" onChange={uploadImage} name="foto" />
-					<div className="form-photo-preview" style={getPreview(user.foto)} />
+					<input
+						id="foto"
+						type="file"
+						onChange={uploadImage}
+						name="foto"
+						className="form-file-input"
+					/>
+					<div className="form__container-btn-photo">
+						<label className="form_photo-btn form-label-photo" htmlFor="foto">
+							Imagen de perfil *
+						</label>
+
+						<div className="form-photo-preview" style={getPreview(user.foto)} />
+					</div>
+				</div>
+				<div class="form__container-instagram">
+					<label class="form_title" htmlFor="instagram">
+						Instagram @
+					</label>
+					<input
+						class="form_field"
+						type="text"
+						name="instagram"
+						id="instagram"
+						placeholder="Ej: frannerd"
+						onChange={handleChange}
+					/>
 				</div>
 			</div>
 		</>

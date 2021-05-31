@@ -1,38 +1,30 @@
 import React, { useState } from 'react';
 import './components/PreviewCard.css';
 import { Link } from 'react-router-dom';
-import Fill from './components/Fill';
-import Design from './components/Design';
 import CustomTitle from './components/CustomTitle';
 import PreviewCard from './components/PreviewCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faObjectUngroup,
-	faKeyboard,
-} from '@fortawesome/free-regular-svg-icons';
-import {
-	faDownload,
-	faChevronUp,
-	faChevronDown,
-} from '@fortawesome/free-solid-svg-icons';
 const initialUserInfo = {
-	nombre: 'Nombre fulano',
-	puesto: 'Front-end capoo',
-	email: '',
-	foto: 'https://brandonporcel.github.io/lianne-react/static/media/LiannePurpleLogo.41b0a55d.png',
+	nombre: 'Lendrick Kamar',
+	puesto: 'Tu papá',
+	visibleSection: 'design',
+	foto: 'https://sitecoreaudioprod.umusicpub.com/sitecore_media/71697910-EB41-4678-914A-6357E5F24351.jpg',
+	instagram: '',
+	palette: '1',
 };
 const userInfo = {
 	nombre: '',
 	puesto: '',
-	email: '',
 	foto: '',
-	telefono: '',
 	visibleSection: '',
+	instagram: '',
+	palette: '1',
 };
 export default function Card() {
 	const [user, setUser] = useState(userInfo);
+
 	const handleCollapsable = (e) => {
 		const visibleSection = e.currentTarget.getAttribute('data-section');
+
 		if (visibleSection === user.visibleSection) {
 			setUser({
 				...user,
@@ -56,13 +48,15 @@ export default function Card() {
 			<main className="main-card">
 				<form>
 					<CustomTitle
-						title="Diseñaa"
+						initialUserInfo={initialUserInfo}
+						title="Diseña"
 						handleCollapsable={handleCollapsable}
 						section="design"
 						user={user}
 						setUser={setUser}
 					></CustomTitle>
 					<CustomTitle
+						initialUserInfo={initialUserInfo}
 						title="Rellena"
 						handleCollapsable={handleCollapsable}
 						section="fill"
