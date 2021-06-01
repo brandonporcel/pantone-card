@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/pantone-card/static/css/main.f05f5e21.chunk.css",
+    "main.js": "/pantone-card/static/js/main.213fd8ed.chunk.js",
+    "main.js.map": "/pantone-card/static/js/main.213fd8ed.chunk.js.map",
+    "runtime-main.js": "/pantone-card/static/js/runtime-main.6a313244.js",
+    "runtime-main.js.map": "/pantone-card/static/js/runtime-main.6a313244.js.map",
+    "static/js/2.85129ec9.chunk.js": "/pantone-card/static/js/2.85129ec9.chunk.js",
+    "static/js/2.85129ec9.chunk.js.map": "/pantone-card/static/js/2.85129ec9.chunk.js.map",
+    "index.html": "/pantone-card/index.html",
+    "static/css/main.f05f5e21.chunk.css.map": "/pantone-card/static/css/main.f05f5e21.chunk.css.map",
+    "static/js/2.85129ec9.chunk.js.LICENSE.txt": "/pantone-card/static/js/2.85129ec9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a313244.js",
+    "static/js/2.85129ec9.chunk.js",
+    "static/css/main.f05f5e21.chunk.css",
+    "static/js/main.213fd8ed.chunk.js"
+  ]
+}
