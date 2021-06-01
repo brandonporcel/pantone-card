@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+form {
+	margin-top: 25px;
+}
+fieldset {
+	font-family: Open Sans, sans-serif;
+	border: none;
+	border-bottom: 1px solid #d3d3d3;
+}
+.custom-container-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0 10px 0;
+	cursor: pointer;
+	height: auto;
+}
+.custom-logo-ctn {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.custom-logo-ctn svg {
+	color: orange;
+	height: 100%;
+	width: 100%;
+}
+.custom-title {
+	width: 100%;
+	padding-left: 10px;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	color: gray;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.custom-arrow-ctn {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@keyframes spin-up {
+	from {
+		transform: rotate(180deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+.custom-arrow-ctn svg {
+	animation-name: spin-up;
+	animation-duration: 1s;
+	color: green;
+	height: 100%;
+	width: 100%;
+}

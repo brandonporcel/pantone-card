@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import './Fill.css';
 export default function Fill({ user, setUser }) {
 	const handleChange = (e) => {
 		setUser({
@@ -7,7 +7,6 @@ export default function Fill({ user, setUser }) {
 			[e.target.name]: e.target.value,
 		});
 	};
-	const handleFilePicker = () => {};
 	const uploadImage = (e) => {
 		const avatarUrl = URL.createObjectURL(e.target.files[0]);
 		setUser({
@@ -16,8 +15,7 @@ export default function Fill({ user, setUser }) {
 		});
 	};
 	const getPreview = (image) => {
-		console.log('HOLA');
-		// 	return 'backgroundImage: `url(${image})`';
+		return { backgroundImage: `url(${image})` };
 	};
 
 	return (
@@ -36,7 +34,6 @@ export default function Fill({ user, setUser }) {
 						placeholder="Ej: Diego Maradona"
 						onChange={handleChange}
 						value={user.nombre}
-						// maxLength={30}
 					/>
 				</div>
 
@@ -51,6 +48,7 @@ export default function Fill({ user, setUser }) {
 						placeholder="Ej: Jugador de Ping Pong"
 						onChange={handleChange}
 						value={user.puesto}
+						maxLength={25}
 					/>
 				</div>
 				<div className="form-photo-ctn">
@@ -72,12 +70,12 @@ export default function Fill({ user, setUser }) {
 						<div className="form-photo-preview" style={getPreview(user.foto)} />
 					</div>
 				</div>
-				<div class="form__container-instagram">
-					<label class="form_title" htmlFor="instagram">
+				<div className="form__container-instagram">
+					<label className="form_title" htmlFor="instagram">
 						Instagram @
 					</label>
 					<input
-						class="form_field"
+						className="form_field"
 						type="text"
 						name="instagram"
 						id="instagram"

@@ -1,0 +1,34 @@
+.design__form {
+	display: flex;
+	justify-content: space-between;
+}
+/* designgngngn */
+.design__subtitle {
+	margin-top: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #54585a;
+}
+.desing-colors-list {
+	padding: 0;
+}
+.radio_btn {
+	margin-right: 10px;
+}
+.design-form-li {
+	list-style: none;
+	display: flex;
+	margin-bottom: 20px;
+}
+.theme {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.theme__color {
+	width: 30px;
+	height: 25px;
+}

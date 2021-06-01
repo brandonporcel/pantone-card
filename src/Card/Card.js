@@ -3,6 +3,7 @@ import './components/PreviewCard.css';
 import { Link } from 'react-router-dom';
 import CustomTitle from './components/CustomTitle';
 import PreviewCard from './components/PreviewCard';
+
 const initialUserInfo = {
 	nombre: 'Lendrick Kamar',
 	puesto: 'Tu papá',
@@ -79,6 +80,15 @@ export default function Card() {
 					setUser={setUser}
 				></PreviewCard>
 			</main>
+			<footer className="card-footer">
+				<a
+					href="https://github.com/brandonporcel"
+					target="_blank"
+					rel="noreferrer"
+				>
+					brandon porcel
+				</a>
+			</footer>
 		</>
 	);
 }

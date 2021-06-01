@@ -56,9 +56,11 @@ export default function PreviewCard({ user, setUser, initialUserInfo }) {
 						</h3>
 					</div>
 
-					<nav class={user.instagram === '' ? 'hide' : 'preview__card--social'}>
-						<ul class="preview__card--ul">
-							<li class="social-card-li">
+					<nav
+						className={user.instagram === '' ? 'hide' : 'preview__card--social'}
+					>
+						<ul className="preview__card--ul">
+							<li className="social-card-li">
 								<a
 									className="social-card-link"
 									target="_blank"

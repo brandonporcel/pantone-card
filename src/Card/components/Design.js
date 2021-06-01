@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import './Design.css';
 export default function Design({ setUser, user, initialUserInfo }) {
 	const actionPalettes = (e) => {
 		setUser({

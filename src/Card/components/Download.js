@@ -1,5 +1,6 @@
 import React from 'react';
 import html2canvas from 'html2canvas';
+import './Download.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 function downloadURI(uri, name) {
@@ -32,7 +33,7 @@ export default function Download({ user }) {
 				type="button"
 			>
 				<FontAwesomeIcon icon={faAddressCard}></FontAwesomeIcon>
-				Crear Cuenta
+				crear tarjeta
 			</button>
 		</div>
 	);

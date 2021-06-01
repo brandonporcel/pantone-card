@@ -2,7 +2,7 @@ import React from 'react';
 import Design from './Design';
 import Fill from './Fill';
 import Share from './Download';
-
+import './CustomTitle.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faChevronDown,
