@@ -37,12 +37,7 @@
 .preview__card.preview__card.preview-second .social-card-link {
 	color: var(--second-color);
 }
-.preview__card.preview__card.preview-default .social-card-li {
-	border: 2px solid var(--first-color-light);
-}
-.preview__card.preview-second .social-card-li {
-	border: 2px solid #e95626;
-}
+
 .social-card-icon {
 	font-size: 19px;
 }
@@ -152,11 +147,24 @@
 	position: static;
 	padding: 20px 0;
 }
+
+@media screen and (min-width: 768px) {
+	.main-card {
+		flex-direction: row;
+	}
+	form {
+		width: 40%;
+	}
+	.preview__card {
+		width: 100%;
+		height: 530px;
+		border-radius: 6px;
+	}
+	.card-footer {
+		position: fixed;
+	}
+}
 /*  */
 .hide {
 	display: none;
-	opacity: 0;
-	visibility: hidden;
-
-	transition: all 0.5s;
 }
