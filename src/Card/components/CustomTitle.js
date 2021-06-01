@@ -1,7 +1,7 @@
 import React from 'react';
 import Design from './Design';
 import Fill from './Fill';
-import Share from './Share';
+import Share from './Download';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -33,7 +33,7 @@ export default function CustomTitle({
 						<FontAwesomeIcon icon={faObjectUngroup} />
 					) : section === 'fill' ? (
 						<FontAwesomeIcon icon={faKeyboard} />
-					) : section === 'share' ? (
+					) : section === 'download' ? (
 						<FontAwesomeIcon icon={faDownload} />
 					) : (
 						'ahre'
@@ -57,7 +57,7 @@ export default function CustomTitle({
 			) : section === 'fill' ? (
 				<Fill user={user} setUser={setUser}></Fill>
 			) : (
-				<Share></Share>
+				<Share user={user}></Share>
 			)}
 		</fieldset>
 	);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import './PreviewCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,6 +18,7 @@ export default function PreviewCard({ user, setUser, initialUserInfo }) {
 	return (
 		<section>
 			<div
+				id="preview-card-ctn"
 				className={`preview__card preview-${
 					user.palette === '1'
 						? 'default'
@@ -35,8 +36,9 @@ export default function PreviewCard({ user, setUser, initialUserInfo }) {
 					></FontAwesomeIcon>
 					reset
 				</button>
-				<article className="pantone-container">
+				<article className="pantone-container" id="pantone-container">
 					<div
+						id="preview-card-img"
 						className="preview__card--image"
 						// style={{  backgroundImage: `url(${user.foto})` }}
 						style={{
